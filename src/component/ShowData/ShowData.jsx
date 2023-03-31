@@ -1,8 +1,13 @@
 import React, { useEffect, useState } from "react";
+import BookmarkedShow from "../BookmarkedShow/BookmarkedShow";
 import Product from "../Product/Product";
 import SpentTime from "../SpentTime/SpentTime";
 import "./ShowData.css";
-import BookmarkedShow from "../BookmarkedShow/BookmarkedShow";
+
+// react toast 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 const ShowData = () => {
   const [products, setProducts] = useState([]);
 
@@ -14,10 +19,13 @@ const ShowData = () => {
     setSpendTime(spendTime + time);
   };
 
+  const notify = () => toast("this item already added!");
+
   const handelReadBook = (singleData) => {
     const exists = addedBookmarkData.find((pd) => pd.id === singleData.id);
     if (exists) {
-      console.log("already exit");
+      // this item already added 
+      notify()
     } else {
       setAddedBookmarkData([...addedBookmarkData, singleData]);
     }
@@ -46,7 +54,7 @@ const ShowData = () => {
         <div className="sticky top-0 ">
           <SpentTime spendTime={spendTime}></SpentTime>
           <div className="ms-10 mt-10">
-           
+          <ToastContainer />
             <BookmarkedShow addedBookmarkData={addedBookmarkData}> </BookmarkedShow>
           </div>
         </div>

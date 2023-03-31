@@ -1,12 +1,14 @@
 import React from "react";
 import "./Product.css";
 
+// font awesome 
 import { faBookmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
+
 const Product = (props) => {
- 
+  const notify = () => toast("Wow so easy!");
 
   const {
     title,
