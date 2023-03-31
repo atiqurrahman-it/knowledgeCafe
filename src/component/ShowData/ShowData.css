@@ -2,5 +2,25 @@
   display: grid;
   grid-template-columns: 4fr 2fr;
   grid-gap: 10px;
-  padding: 0px 20px;
 }
+
+.card-body {
+  padding: 10px 0px !important;
+}
+
+.card-actions {
+  color: #6047ec;
+  font-weight: 600;
+  font-size: 20px;
+  text-decoration: underline;
+}
+
+
+
+@media (max-width: 576px) { 
+  .main {
+    display: grid;
+    grid-template-columns:1fr;
+    grid-gap: 10px;
+  }
+ }

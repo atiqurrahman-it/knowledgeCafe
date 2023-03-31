@@ -4,9 +4,9 @@ import Product from "../Product/Product";
 import SpentTime from "../SpentTime/SpentTime";
 import "./ShowData.css";
 
-// react toast 
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+// react toast
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const ShowData = () => {
   const [products, setProducts] = useState([]);
@@ -24,14 +24,13 @@ const ShowData = () => {
   const handelReadBook = (singleData) => {
     const exists = addedBookmarkData.find((pd) => pd.id === singleData.id);
     if (exists) {
-      // this item already added 
-      notify()
+      // this item already added
+      notify();
     } else {
       setAddedBookmarkData([...addedBookmarkData, singleData]);
     }
   };
 
- 
   useEffect(() => {
     fetch("blogdata.json")
       .then((res) => res.json())
@@ -51,11 +50,13 @@ const ShowData = () => {
         ))}
       </div>
       <div className="">
-        <div className="sticky top-0 ">
+        <div className="sticky top-5 ">
           <SpentTime spendTime={spendTime}></SpentTime>
           <div className="ms-10 mt-10">
-          <ToastContainer />
-            <BookmarkedShow addedBookmarkData={addedBookmarkData}> </BookmarkedShow>
+            <ToastContainer />
+            <BookmarkedShow addedBookmarkData={addedBookmarkData}>
+            
+            </BookmarkedShow>
           </div>
         </div>
       </div>

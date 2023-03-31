@@ -3,3 +3,25 @@
   width: 100%;
   border-radius: 50%;
 }
+
+.readIcon {
+  padding: 0px;
+  font-size: 20px;
+  color: rgba(17, 17, 17, 0.6);
+}
+
+.readIcon span {
+  margin-right: 10px;
+}
+
+.card-title {
+  font-weight: 700;
+  font-size: 40px;
+  color: #111111;
+}
+
+@media (max-width: 576px) {
+  .card figure {
+    height: 50%;
+  }
+}
