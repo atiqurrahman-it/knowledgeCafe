@@ -39,7 +39,7 @@ const Product = (props) => {
 
             <div>
               <p>
-                {read_time} min read <FontAwesomeIcon icon={faBookmark} fade />{" "}
+                {read_time} min read <i onClick={()=>props.handelReadBook(props)}> <FontAwesomeIcon icon={faBookmark} fade /> </i>
               </p>
             </div>
           </div>
