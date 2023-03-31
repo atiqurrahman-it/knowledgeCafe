@@ -1,5 +1,6 @@
 import React from "react";
 import "./BookmarkedShow.css";
+import Bookmarked from "../Bookmarked/Bookmarked";
 const BookmarkedShow = (props) => {
   const bookmarks = props.addedBookmarkData;
   return (
@@ -8,9 +9,9 @@ const BookmarkedShow = (props) => {
         Bookmarked Blogs: {bookmarks.length}{" "}
       </h1>
       {
-        bookmarks.map((bookmark)=>console.log(bookmark))
+        bookmarks.map((bookmark)=><Bookmarked name={bookmark.title}></Bookmarked>)
       }
-      <h3> Book Mark</h3>
+      
     </div>
   );
 };
