@@ -4,7 +4,10 @@ import "./Product.css";
 import { faBookmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
+
 const Product = (props) => {
+ 
+
   const {
     title,
     cover_image,
@@ -13,7 +16,7 @@ const Product = (props) => {
     author_image,
     read_time,
   } = props;
-  console.log(cover_image);
+  
   return (
     <>
       <div className="card card-compact w-full bg-base-100 mb-10">
@@ -43,7 +46,7 @@ const Product = (props) => {
 
           <h2 className="card-title">{title}!</h2>
           <div className="card-actions justify-start">
-            <p> Mark as read</p>
+            <button onClick={()=>props.setHandelTime(read_time)}> Mark as read</button>
           </div>
         </div>
       </div>
