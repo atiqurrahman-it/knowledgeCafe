@@ -15,13 +15,25 @@ const ShowData = () => {
 
   const [addedBookmarkData, setAddedBookmarkData] = useState([]);
 
+
   const HandelReadTime = (time) => {
-    setSpendTime(spendTime + time);
+    const prevSpendReadTime = JSON.parse(localStorage.getItem("spendTime"));
+    if (prevSpendReadTime) {
+      const totalSpendTime = prevSpendReadTime + time;
+      localStorage.setItem("spendTime", totalSpendTime);
+
+      setSpendTime(totalSpendTime);
+    } else {
+      localStorage.setItem("spendTime", time);
+      setSpendTime(time);
+    }
+    // setSpendTime(spendTime + time);
   };
 
   const notify = () => toast("this item already added!");
 
   const handelReadBook = (singleData) => {
+  
     const exists = addedBookmarkData.find((pd) => pd.id === singleData.id);
     if (exists) {
       // this item already added
@@ -54,9 +66,9 @@ const ShowData = () => {
           <SpentTime spendTime={spendTime}></SpentTime>
           <div className="ms-10 mt-10">
             <ToastContainer />
-            <BookmarkedShow addedBookmarkData={addedBookmarkData}>
-            
-            </BookmarkedShow>
+            <BookmarkedShow
+              addedBookmarkData={addedBookmarkData}
+            ></BookmarkedShow>
           </div>
         </div>
       </div>

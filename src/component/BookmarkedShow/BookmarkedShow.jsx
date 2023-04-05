@@ -9,7 +9,7 @@ const BookmarkedShow = (props) => {
         Bookmarked Blogs: {bookmarks.length}
       </h1>
       {
-        bookmarks.map((bookmark)=><Bookmarked name={bookmark.title}></Bookmarked>)
+        bookmarks.map((bookmark)=><Bookmarked name={bookmark.title} key={bookmark.id}></Bookmarked>)
       }
       
     </div>
