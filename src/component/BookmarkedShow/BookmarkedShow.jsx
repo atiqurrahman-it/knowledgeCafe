@@ -1,17 +1,27 @@
-import React from "react";
-import "./BookmarkedShow.css";
+import React, { useEffect, useState } from "react";
 import Bookmarked from "../Bookmarked/Bookmarked";
-const BookmarkedShow = (props) => {
-  const bookmarks = props.addedBookmarkData;
+import "./BookmarkedShow.css";
+const BookmarkedShow = ({addedBookmarkData}) => {
+  // way one 
+  // const bookMarkFromLocalStorage = JSON.parse(localStorage.getItem("bookMark"));
+
+  // way two
+  const [BookMarksLocal,setBookMarkLocal]=useState(addedBookmarkData)
+  useEffect(()=>{
+    const bookMarkFromLocalStorage = JSON.parse(localStorage.getItem("bookMark"));
+    setBookMarkLocal(bookMarkFromLocalStorage||[])
+
+  },[addedBookmarkData])
+
+
   return (
     <div className="mb-5">
       <h1 className="text-3xl font-bold">
-        Bookmarked Blogs: {bookmarks.length}
+        Bookmarked Blogs: {BookMarksLocal?.length||0}
       </h1>
-      {
-        bookmarks.map((bookmark)=><Bookmarked name={bookmark.title} key={bookmark.id}></Bookmarked>)
-      }
-      
+      {BookMarksLocal?.map((bookmark) => (
+        <Bookmarked name={bookmark.title} key={bookmark.id}></Bookmarked>
+      ))}
     </div>
   );
 };

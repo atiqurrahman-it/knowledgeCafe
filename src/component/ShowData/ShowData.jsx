@@ -15,7 +15,6 @@ const ShowData = () => {
 
   const [addedBookmarkData, setAddedBookmarkData] = useState([]);
 
-
   const HandelReadTime = (time) => {
     const prevSpendReadTime = JSON.parse(localStorage.getItem("spendTime"));
     if (prevSpendReadTime) {
@@ -32,17 +31,49 @@ const ShowData = () => {
 
   const notify = () => toast("this item already added!");
 
+  // const handelReadBook = (singleData) => {
+
+  //   const exists = addedBookmarkData.find((pd) => pd.id === singleData.id);
+  //   if (exists) {
+  //     // this item already added
+  //     notify();
+  //   } else {
+  //     setAddedBookmarkData([...addedBookmarkData, singleData]);
+  //   }
+  // };
+
   const handelReadBook = (singleData) => {
-  
-    const exists = addedBookmarkData.find((pd) => pd.id === singleData.id);
+    const prevBookMark = JSON.parse(localStorage.getItem("bookMark"));
+
+    const exists = prevBookMark?.find((pd) => pd.id === singleData.id);
     if (exists) {
       // this item already added
       notify();
     } else {
-      setAddedBookmarkData([...addedBookmarkData, singleData]);
+      if (prevBookMark) {
+        const updateBookMark = JSON.stringify([...prevBookMark, singleData]);
+        localStorage.setItem("bookMark", updateBookMark);
+        //
+        setAddedBookmarkData([...addedBookmarkData, singleData]);
+      } else {
+        const newBookMark = JSON.stringify([singleData]);
+        localStorage.setItem("bookMark", newBookMark);
+        //
+        setAddedBookmarkData([singleData]);
+      }
+      // setAddedBookmarkData([...addedBookmarkData, singleData]);
     }
   };
 
+  //--------------------problem -------
+  const ClearData = () => {
+    setSpendTime(0)
+    setAddedBookmarkData([])
+  
+    localStorage.clear("spendTime");
+    localStorage.clear("bookMark");
+  };
+//----------------------------
   useEffect(() => {
     fetch("blogdata.json")
       .then((res) => res.json())
@@ -63,6 +94,9 @@ const ShowData = () => {
       </div>
       <div className="">
         <div className="sticky top-5 ">
+          <button onClick={ClearData} className="ClearData">
+            Clear All Data
+          </button>
           <SpentTime spendTime={spendTime}></SpentTime>
           <div className="ms-10 mt-10">
             <ToastContainer />
