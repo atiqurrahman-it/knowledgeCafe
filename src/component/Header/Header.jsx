@@ -3,6 +3,7 @@ import logo from "../../assets/logo.jpg";
 import "./Header.css";
 
 import { Link, NavLink } from "react-router-dom";
+import ActiveLink from "../ActiveLink/ActiveLink";
 
 const Header = () => {
   return (
@@ -11,22 +12,22 @@ const Header = () => {
       <div className="navbar bg-base-100">
         <div className="flex-1">
           <div className="btn btn-ghost normal-case text-2xl font-bold">
-            <NavLink to='/'> Knowledge Cafe</NavLink>
+            <ActiveLink to='/'> Knowledge Cafe</ActiveLink>
           </div>
         </div>
         <div className="flex-none">
           <ul className="navbar-ul">
             <li>
              
-              <Link to="/sellProducts">Product</Link>
+              <ActiveLink to="/sellProducts">Product</ActiveLink>
             </li>
             <li>
               
-              <Link to="/skills">Skills</Link>
+              <ActiveLink to="/skills">Skills</ActiveLink>
             </li>
             <li>
               
-              <Link to="/blog">Blog</Link>
+              <ActiveLink to="/blog">Blog</ActiveLink>
             </li>
           </ul>
 

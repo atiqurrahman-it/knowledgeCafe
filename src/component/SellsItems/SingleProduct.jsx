@@ -1,7 +1,11 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useNavigate } from 'react-router-dom';
 
 const SingleProduct = () => {
+    const navigate=useNavigate()
+    const handelGoBack=()=>{
+        navigate(-1)
+    }
     const product=useLoaderData()
     const {title,description,thumbnail,price}=useLoaderData()
     console.log(product)
@@ -14,7 +18,7 @@ const SingleProduct = () => {
                 <p className="py-6">{description}</p>
                  <h5 className='text-2xl font-bold mb-1'>Price : ${price}</h5>
                 <button className="btn btn-primary">Get Started</button>
-                <button className="btn btn-primary ms-2">Back</button>
+                <button onClick={handelGoBack} className="btn btn-primary ms-2">Back</button>
                 </div>
             </div>
       </div>  
