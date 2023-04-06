@@ -9,6 +9,7 @@ import Skills from "./component/Skills/Skills";
 import Home from "./Home";
 import SellsItems from "./component/SellsItems/SellsItems";
 import SingleProduct from "./component/SellsItems/SingleProduct";
+import ErrorPage from "./component/ErrorPage/ErrorPage";
 // const router = createBrowserRouter([
 //   {
 //     path: "/",
@@ -52,6 +53,12 @@ const router = createBrowserRouter([
         path: "skills",
         element: <Skills></Skills>,
         loader:()=>fetch('skills.json')
+      },
+      {
+        path:"*",
+        
+        element:<ErrorPage></ErrorPage>
+
       },
     ],
   },
