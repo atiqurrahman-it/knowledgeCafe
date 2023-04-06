@@ -10,22 +10,22 @@ const Header = () => {
     <>
       <div className="navbar bg-base-100">
         <div className="flex-1">
-          <a className="btn btn-ghost normal-case text-2xl font-bold">
+          <div className="btn btn-ghost normal-case text-2xl font-bold">
             <NavLink to='/'> Knowledge Cafe</NavLink>
-          </a>
+          </div>
         </div>
         <div className="flex-none">
           <ul className="navbar-ul">
             <li>
-              {" "}
+             
               <Link to="/">Home</Link>
             </li>
             <li>
-              {" "}
-              <Link to="/about">About</Link>
+              
+              <Link to="/skills">Skills</Link>
             </li>
             <li>
-              {" "}
+              
               <Link to="/blog">Blog</Link>
             </li>
           </ul>

@@ -5,6 +5,7 @@ import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App";
 import Blog from "./Blog";
+import Skills from "./component/Skills/Skills";
 import Home from "./Home";
 // const router = createBrowserRouter([
 //   {
@@ -33,6 +34,11 @@ const router = createBrowserRouter([
       {
         path: "blog",
         element: <Blog></Blog>,
+      },
+      {
+        path: "skills",
+        element: <Skills></Skills>,
+        loader:()=>fetch('skills.json')
       },
     ],
   },

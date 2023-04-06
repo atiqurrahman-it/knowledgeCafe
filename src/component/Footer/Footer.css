@@ -83,4 +83,12 @@
       flex-direction: column;
     }
   }
+
+  @media (min-width: 577px) and (max-width: 830px) { 
+    .footer-info {
+      
+      grid-template-columns: 1fr 1fr;
+    }
+   }
+ 
   

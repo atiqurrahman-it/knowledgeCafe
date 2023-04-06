@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "title": "JavaScripts",
+    "image": "https://www.freecodecamp.org/news/content/images/size/w2000/2021/03/Pink-Cute-Chic-Vintage-90s-Virtual-Trivia-Quiz-Presentations--39-.png"
+  },
+  {
+    "id": 2,
+    "title": "React",
+    "image": "https://png.pngtree.com/png-vector/20220804/ourmid/pngtree-programmers-using-javascript-programming-language-on-computer-png-image_5737687.png"
+  },
+  {
+    "id": 3,
+    "title": "HTML & CSS ",
+    "image": "https://images.tynker.com/blog/wp-content/uploads/20190226100225/02-25-2018-html-css-announcement-blog.png"
+  },
+  {
+    "id": 4,
+    "title": "Python",
+    "image": "https://uba.uva.nl/binaries/_ht_1664372656097/content/gallery/subsites/bibliotheek/workshops/python-symbol.png"
+  },
+  {
+    "id": 5,
+    "title": "Django",
+    "image": "https://elpythonista.com/wp-content/uploads/2020/10/Django.jpg"
+  },
+  {
+    "id": 6,
+    "title": "C Pprogramming Language",
+    "image": "https://media.geeksforgeeks.org/wp-content/cdn-uploads/20230304230816/C-Programming-Language.png"
+  }
+]
