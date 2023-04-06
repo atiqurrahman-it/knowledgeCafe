@@ -18,7 +18,7 @@ const Header = () => {
           <ul className="navbar-ul">
             <li>
              
-              <Link to="/">Home</Link>
+              <Link to="/sellProducts">Product</Link>
             </li>
             <li>
               

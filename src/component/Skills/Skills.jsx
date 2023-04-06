@@ -4,7 +4,6 @@ import { useLoaderData } from "react-router-dom";
 import SingleSkill from "../SingleSkill/SingleSkill";
 const Skills = () => {
     const skills=useLoaderData()
-    console.log(skills)
   return (
     <div className="md:grid grid-cols-2 gap-5 mx-10 place-items-center my-7">
         {

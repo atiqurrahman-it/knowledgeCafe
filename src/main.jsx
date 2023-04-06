@@ -7,6 +7,8 @@ import App from "./App";
 import Blog from "./Blog";
 import Skills from "./component/Skills/Skills";
 import Home from "./Home";
+import SellsItems from "./component/SellsItems/SellsItems";
+import SingleProduct from "./component/SellsItems/SingleProduct";
 // const router = createBrowserRouter([
 //   {
 //     path: "/",
@@ -30,6 +32,17 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <App></App>,
+      },
+      {
+        path: "sellProducts",
+        element:<SellsItems></SellsItems>,
+        loader: ()=>fetch('https://dummyjson.com/products')
+      },
+      {
+        path: "sellProducts/:sellProductId",
+        element:<SingleProduct></SingleProduct>,
+        loader:({params})=>fetch(`https://dummyjson.com/products/${params.sellProductId}`)
+        
       },
       {
         path: "blog",
